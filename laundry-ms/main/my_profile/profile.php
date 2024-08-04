@@ -176,21 +176,30 @@
                         <h4 class="text-center">Password</h4>
                         <div class="col">
                             <label for="current_pass" class="form-label">Current Password</label>
-                            <input type="password" id="current_pass" name="current_pass" class="form-control">
+                            <div class="password-wrapper">
+                                <input type="password" id="current_pass" name="current_pass" class="form-control">
+                                <i class='bx bx-show toggle-password' data-target="#current_pass"></i>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
                             <label for="new_pass" class="form-label">New Password</label>
-                            <input type="password" id="new_pass" name="new_pass" class="form-control" minlength="8">
+                            <div class="password-wrapper">
+                                <input type="password" id="new_pass" name="new_pass" class="form-control" minlength="8">
+                                <i class='bx bx-show toggle-password' data-target="#new_pass"></i>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
                             <label for="confirm_pass" class="form-label">Confirm Password</label>
-                            <input type="password" id="confirm_pass" name="confirm_pass" class="form-control" minlength="8">
+                            <div class="password-wrapper">
+                                <input type="password" id="confirm_pass" name="confirm_pass" class="form-control" minlength="8">
+                                <i class='bx bx-show toggle-password' data-target="#confirm_pass"></i>
+                            </div>
                         </div>
                     </div>
                     
@@ -200,7 +209,12 @@
                     </div>
                 </form>
             </div>
+
+
+
         </div>
+
+
     </div> 
 
     <!---------------JAVASCRIPT------------------>
