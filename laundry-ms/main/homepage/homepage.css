@@ -773,8 +773,8 @@ footer > * {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 90%; /* Default width for smaller screens */
-    max-width: 600px; /* Maximum width for larger screens */
+    width: 90%; 
+    max-width: 600px;
 }
 
 #services-table {
@@ -796,36 +796,49 @@ footer > * {
 .print_invoice .logo_header h4 {
     margin-bottom: 10px;
 }
-
-/* Styles for printing */
+/* 
 @media print {
+    @page {
+        size: 80mm;
+        margin: 5mm; 
+    }
+    
     .print_invoice {
         display: block;
         position: static;
         background-color: transparent;
-        padding-top: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
     }
 
     .invoice_container {
         margin: 0;
         padding: 0;
         border: none;
-        width: 100%; /* Ensure it fits the thermal printer paper */
-        max-width: none;
+        width: 100%; 
+        max-width: 100%;
     }
 
     body {
-        font-size: 12px; /* Adjust font size for thermal printer */
-        width: 80mm; /* Width of the thermal printer paper */
+        font-size: 12px; 
+        width: 100%; 
+        margin: 0;
+        padding: 0;
     }
 
     .text-center {
         text-align: center;
+        font-size: 12px;
     }
 
     .mt-4, .mt-2, .mb-4 {
         margin-top: .5rem;
         margin-bottom: .5rem;
+    }
+
+    * {
+        font-size: 12px;
     }
 
     .table {
@@ -838,14 +851,19 @@ footer > * {
     }
 
     .table th, .table td {
-        padding: 5px;
+        padding: 3px;
         text-align: left;
     }
 
     .logo_header img {
-        width: 100px; /* Adjust size as needed */
+        width: 40px;
         height: auto;
         display: block;
         margin: 0 auto;
     }
-}
+    
+    .content {
+        padding: 5px;
+    }
+} */
+

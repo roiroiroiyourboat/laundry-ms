@@ -78,8 +78,8 @@ $conn->close();
                             <img src="/laundry-ms/main/images/laundry-logo.png" alt="logo">      
                         </header>
                         <button type="button" class="btnClose" onclick="closeForm()"><i class='bx bx-x bx-rotate-90'></i></button>
-                        <h2>Login</h2>
-                        <h5>Welcome back!</h5>
+                        <h4>Welcome back!</h4>
+                        <h5>Login</h5>
                     </div>
 
                     <form action="/laundry-ms/main/homepage/configs/login_form" method="post">
@@ -116,7 +116,7 @@ $conn->close();
                     <h5 class="text-center">Service Request</h5>
                     <button type="button" class="btnClose" onclick="closeForm()"><i class='bx bx-x bx-rotate-90'></i></button>
                 </div>
-                <hr style="border: 1px solid #b8c1ec; margin: 16px"> <!--this line will create a horizontal rule-->
+                <hr style="border: 1px solid #b8c1ec; margin: 16px"> <!--this line will create a horizontal line-->
                 
                 <div class="row">
                     <h5 class="text-center">Customer Details</h5>
@@ -252,10 +252,12 @@ $conn->close();
                         <button type="button" class="btnClose"><i class='bx bx-x bx-rotate-90'></i></button>
                     </div>
 
-                    <hr style="border: 1px solid #b8c1ec; margin: 18px 0;"> <!--this line will create a horizontal rule-->
+                    <hr style="border: 1px solid #b8c1ec; margin: 18px 0;"> 
 
                     <input type="hidden" id="customer_id_hidden" name="customer_id">
                     <input type="hidden" id="service_request_id_hidden" name="service_request_id">
+                    <input type="hidden" id="customer_name_hidden" name="customer_name_hidden">
+                    <input type="hidden" id="contact_number_hidden" name="contact_number_hidden">
 
                     <div class="row">       
                         <h5 class="text-center">Service Details</h5>
@@ -268,17 +270,7 @@ $conn->close();
                     </div>
 
                     <div class="row">
-                        <div class="col">
-                            <!--<div class="form-check form-check-inline" id="radio_btn_con">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rush" value="rush">
-                                <label class="form-check-label" for="rush">Rush</label>
-                            </div>
-                                CHECK BOX NALANG KUNG RUSH???
-                            <div class="form-check form-check-inline" id="radio_btn_con">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="standard" value="standard">
-                                <label class="form-check-label" for="standard">Standard</label>
-                            </div>-->
-                            
+                        <div class="col">                            
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="Rush" id="rush">
                                 <label class="form-check-label" for="rush"><b>Rush</b></label>
@@ -355,7 +347,7 @@ $conn->close();
             </div>
         </div> <!--END OF SERVICE DETAILS-->
 
-        <!-------INVOICE-------->
+        <!-------INVOICE(OLD)------
         <div class="print_invoice" id="print_invoice">
             <div class="invoice_container" id="invoice_container">
                 <div class="logo_header">
@@ -381,9 +373,9 @@ $conn->close();
                     </div>
                 </div>
 
-                <h6>Contact Number: 09123456789</h6>
-                <h6>Address: Dyan sa tabi tabi</h6>
-                <h6>Pickup/Delivery Date: 14/06/2024</h6>
+                <h6>Contact Number: </h6>
+                <h6>Address: </h6>
+                <h6>Pickup/Delivery Date: </h6>
 
                 <h4 class="mt-4">Service Details</h4>
                 <table class="table table-bordered" id="services-table">
@@ -412,6 +404,59 @@ $conn->close();
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div> -->
+
+        <!-------INVOICE-------->
+        <div class="print_invoice" id="print_invoice" style="display:none;">
+            <div class="invoice_container" id="invoice_container">
+                <div class="logo_header">
+                    <header>
+                        <img src="/laundry-ms/main/images/laundry-logo.png">     
+                    </header>
+                    <h4 class="text-center">Azia Skye's Laundry</h4>
+                    <h6 class="text-center">Verde Height, City of San Jose del Monte, Bulacan</h6>
+                    <h6 class="text-center">0995-062-8516 / 0991-370-9729</h6>
+                </div>
+                <hr style="border: 1px solid #000000; margin: 16px 0;">
+                
+                <div id="invoice-details" class="mb-4">
+                    <h6>Customer No: <span id="invoice_customer_id_hidden"></span></h6>
+
+                    <div class="row">
+                        <div class="col">
+                            <h6>Name: <span id="invoice_name"></span></h6>
+                        </div>
+
+                        <div class="col">
+                            <h6>Date: <span id="invoice_date"></span></h6>
+                        </div>
+                    </div>
+
+                    <h6>Contact Number: <span id="invoice_contact_number"></span></h6>
+                    <h6>Address: <span id="invoice_address"></span></h6>
+
+                    <h4>Service Details</h4>
+                    <table class="table table-bordered" id="services-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Category</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Service details will be inserted here -->
+                        </tbody>
+                    </table>
+                    
+                    <h6>Service Type: <span id="invoice_service_type"></span></h6>
+                    <h6>Pickup/Delivery Date: <span id="invoice_pickup_delivery_date"></span></h6>
+
+                    <button type="button" class="btn btn-primary" id="print_invoice_btn" style="display: none;">Print Invoice</button>
+                </div>
+
             </div>
         </div>
 
