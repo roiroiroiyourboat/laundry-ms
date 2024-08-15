@@ -347,66 +347,6 @@ $conn->close();
             </div>
         </div> <!--END OF SERVICE DETAILS-->
 
-        <!-------INVOICE(OLD)------
-        <div class="print_invoice" id="print_invoice">
-            <div class="invoice_container" id="invoice_container">
-                <div class="logo_header">
-                    <header>
-                        <img src="/laundry-ms/main/images/laundry-logo.png">     
-                    </header>
-                    <h4 class="text-center">Azia Skye's Laundry</h4>
-                    <h6 class="text-center">Verde Height, City of San Jose del Monte, Bulacan</h6>
-                    <h6 class="text-center">0995-062-8516 / 0991-370-9729</h6>
-                </div>
-                <hr style="border: 1px solid #000000; margin: 18px 0;">
-                
-            <div id="invoice-details" class="mb-4">
-                <h6>Customer No: <span id="invoice_customer_id_hidden"></h6>
-
-                <div class="row">
-                    <div class="col">
-                         <h6>Name: </h6>
-                    </div>
-
-                    <div class="col">
-                        <h6>Date: </h6>
-                    </div>
-                </div>
-
-                <h6>Contact Number: </h6>
-                <h6>Address: </h6>
-                <h6>Pickup/Delivery Date: </h6>
-
-                <h4 class="mt-4">Service Details</h4>
-                <table class="table table-bordered" id="services-table">
-                    <thead>
-                        <tr>
-                            <th>Service</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            //service of the users chose
-                            //selected quantityof users
-                            //price of the service
-                            //Amount
-                        </tr>
-
-                        <tr >
-                            <td colspan="4">Delivery Fee: ₱</td>
-                        </tr>
-
-                        <tr >
-                            <td colspan="4">Total Amount: ₱</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div> -->
-
         <!-------INVOICE-------->
         <div class="print_invoice" id="print_invoice" style="display:none;">
             <div class="invoice_container" id="invoice_container">
@@ -443,6 +383,7 @@ $conn->close();
                                 <th>Service</th>
                                 <th>Category</th>
                                 <th>Quantity</th>
+                                <th>Weight</th>
                                 <th>Price</th>
                             </tr>
                         </thead>

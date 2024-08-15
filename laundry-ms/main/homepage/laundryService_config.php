@@ -56,11 +56,7 @@ try {
             'customer_id' => $customer_id,
             'service_request_id' => $service_request_id,
             'customer_name' => $customer_name,
-            'contact_number' => $contact_number,
-            'service_option' => $service_option,
-            'category_option' => $category_option,
-            'price' => $price,
-            'quantity' => $quantity
+            'contact_number' => $contact_number
         );
 
         echo json_encode($response);
