@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2024 at 03:13 PM
+-- Generation Time: Aug 22, 2024 at 06:58 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -53,14 +53,6 @@ CREATE TABLE `tbl_customer` (
   `contact_number` varchar(20) NOT NULL,
   `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_customer`
---
-
-INSERT INTO `tbl_customer` (`customer_id`, `customer_name`, `contact_number`, `address`) VALUES
-(290, 'nitnit', '9111111111', ''),
-(291, 'tobi', '9888888888', '');
 
 -- --------------------------------------------------------
 
@@ -174,14 +166,6 @@ CREATE TABLE `tbl_service_request` (
   `order_status` enum('completed','active','cancelled','') NOT NULL DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tbl_service_request`
---
-
-INSERT INTO `tbl_service_request` (`request_id`, `customer_id`, `customer_name`, `contact_number`, `service_id`, `laundry_service_option`, `category_id`, `laundry_category_option`, `quantity`, `weight`, `price`, `request_date`, `service_request_datetime`, `order_status`) VALUES
-(452, 290, 'nitnit', '09111111111', 1, 'Wash/Dry/Fold', 1, 'Clothes/Table Napkin/Pillowcase', 1, 5, 35.00, '2024-08-06', '2024-08-03 21:12:10', 'completed'),
-(453, 291, 'tobi', '09888888888', 1, 'Wash/Dry/Fold', 1, 'Clothes/Table Napkin/Pillowcase', 1, 5, 35.00, '2024-08-06', '2024-08-03 21:13:08', 'completed');
-
 -- --------------------------------------------------------
 
 --
@@ -224,14 +208,6 @@ CREATE TABLE `tbl_transaction` (
   `amount_tendered` decimal(65,2) NOT NULL,
   `money_change` decimal(65,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_transaction`
---
-
-INSERT INTO `tbl_transaction` (`transaction_id`, `request_id`, `customer_id`, `user_id`, `service_option_id`, `service_option_name`, `laundry_cycle`, `customer_address`, `total_amount`, `delivery_fee`, `pickup_fee`, `rush_fee`, `amount_tendered`, `money_change`) VALUES
-(260, 452, 290, 0, 2, 'Pick up', 'Rush', '', 225.00, 0.00, 25.00, 25.00, 500.00, 275.00),
-(261, 453, 291, 0, 2, 'Pick up', 'Standard', '', 200.00, 0.00, 25.00, 0.00, 200.00, 0.00);
 
 -- --------------------------------------------------------
 
@@ -346,7 +322,7 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=292;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=384;
 
 --
 -- AUTO_INCREMENT for table `tbl_service`
@@ -376,7 +352,7 @@ ALTER TABLE `tbl_service_option_price`
 -- AUTO_INCREMENT for table `tbl_service_request`
 --
 ALTER TABLE `tbl_service_request`
-  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=454;
+  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=583;
 
 --
 -- AUTO_INCREMENT for table `tbl_settings_config`
@@ -388,7 +364,7 @@ ALTER TABLE `tbl_settings_config`
 -- AUTO_INCREMENT for table `tbl_transaction`
 --
 ALTER TABLE `tbl_transaction`
-  MODIFY `transaction_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=262;
+  MODIFY `transaction_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=367;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`

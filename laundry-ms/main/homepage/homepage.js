@@ -448,8 +448,9 @@ $(document).ready(function() {
                         contact_number: contactNumber
                     },
                     success: function(response) {
+                        console.log("Response from server:", response);
                         if (response.status === 'error') {
-                            swal.fire({ title: "Validation Failed!", text: response.message, icon: "error" });
+                            swal.fire({ title: "Oops...", text: response.message, icon: "error" });
                         } else {
                             // If customer name and contact number is available, add order to orders array
                             var order = {

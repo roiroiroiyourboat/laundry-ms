@@ -200,7 +200,8 @@ $conn->close();
                     <h5 class="text-center">Service Request Overview</h5>
                     <button type="button" class="btnClose"><i class='bx bx-x bx-rotate-90'></i></button>
                 </div>
-                <hr style="border: 1px solid #b8c1ec; margin: 18px 0;"> <!--horizontal rule-->
+                
+                <hr style="border: 1px solid #b8c1ec; margin: 18px 0;"> 
 
                 <div class="container mt-2" id="overview">
                     <h6 class="text-center">Customer Number: <span id="customer_id_display"></h5>
